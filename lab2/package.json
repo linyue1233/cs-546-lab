@@ -1,0 +1,12 @@
+{
+  "name": "cs-546-lab2",
+  "version": "1.0.0",
+  "description": "yue lin lab2 moudle",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yue Lin 10479231",
+  "license": "ISC"
+}

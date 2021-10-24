@@ -1,0 +1,15 @@
+{
+  "name": "cs-546-lab3",
+  "version": "1.0.0",
+  "description": "Yue Lin lab3",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yue Lin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4"
+  }
+}
