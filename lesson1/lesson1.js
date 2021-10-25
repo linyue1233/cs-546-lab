@@ -108,3 +108,10 @@
 // };
 
 // __.isEqual(one, two);
+
+
+let nums = 2.446242342;
+console.log(nums.toFixed(1));
+
+let n = 1;
+console.log(n.toFixed(1));
