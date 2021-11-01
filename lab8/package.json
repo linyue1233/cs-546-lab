@@ -1,0 +1,11 @@
+{
+  "name": "cs-546-lab8",
+  "version": "1.0.0",
+  "description": "Yue Lin 10479231 CS-546-lab8",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yue Lin 10479231",
+  "license": "ISC"
+}
