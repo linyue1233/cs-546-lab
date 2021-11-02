@@ -1,15 +1,16 @@
 <h1>Characters Found</h1>
-<h2 class="searchTerm"></h2>
+<h2 class="searchTerm">The searchTerm is:  {{searchTerm}}</h2>
 <main>
     {{#if characters.length}}
-        <p class="not-found">We're sorry, but no results were found for {searchTerm}.</p>
-    {{/if}}
     <ul>
         {{#each characters}}
         <li>
-            <a href="/character/{{id}}">{{this.name}}</a>
+            <a href="/character/{{this.id}}">{{this.name}}</a>
         </li>
         {{/each}}
     </ul>
-    <a href="/">Make another search</a>
+    {{else}}
+        <p class="not-found">We're sorry, but no results were found for {{searchTerm}}.</p>
+        <a href="/">Make another search</a>
+    {{/if}}
 </main>

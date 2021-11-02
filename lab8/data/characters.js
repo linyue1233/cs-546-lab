@@ -11,12 +11,17 @@ const url = baseUrl + '?ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
 async function getCharactersBysearchTerm(searchTerm){
     const newUrl = baseUrl + '?nameStartsWith=' + searchTerm + '&ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
     const charactersData = await axios.get(newUrl);
-    console.log(charactersData);
-    console.log(newUrl);
     return charactersData;
 }
 
+async function getCharacterById(characterId){
+    const newUrl = baseUrl +"/"+ characterId + '?ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
+    const characterData = await axios.get(newUrl);
+    console.log(newUrl);
+    return characterData;
+}
 
 module.exports = {
-    getCharactersBysearchTerm
+    getCharactersBysearchTerm,
+    getCharacterById
 }
