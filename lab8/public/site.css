@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size : larger;
+    font-style: oblique;
+}
+
+body {
+    background : #dedede;
+    font-weight: 300;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+main{
+    color: chocolate;
+}
+
+main p{
+    color: darkgreen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color    : brown;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#form-post-text{
+    color:blue
+}
+
+.new-post-form {
+	max-width: 300px;
+}
