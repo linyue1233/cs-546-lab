@@ -15,11 +15,11 @@ body {
 }
 
 main{
-    color: chocolate;
+    color: cadetblue;
 }
 
 main p{
-    color: darkgreen;
+    color:coral;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -44,4 +44,19 @@ h1 {
 
 .new-post-form {
 	max-width: 300px;
+}
+
+
+.description {
+    font-size: large;
+    text-align: justify;
+}
+
+.form-label{
+    font-size: 16px;
+}
+
+.character-input{
+    font-size: larger;
+    color: cyan;
 }
