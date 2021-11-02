@@ -4,18 +4,15 @@ const privateKey = '79136eb402abb855ea53fd605d6c589be54330d7';
 const ts = new Date().getTime();
 const stringToHash = ts + privateKey + publicKey;
 const hash = md5(stringToHash);
+const axios = require('axios')
 const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters';
 const url = baseUrl + '?ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
-
-// async function getCharacterData() {
-//     const { data } = await axios.get(url);
-//     return data;
-// }
-
 
 async function getCharactersBysearchTerm(searchTerm){
     const newUrl = baseUrl + '?nameStartsWith=' + searchTerm + '&ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
     const charactersData = await axios.get(newUrl);
+    console.log(charactersData);
+    console.log(newUrl);
     return charactersData;
 }
 

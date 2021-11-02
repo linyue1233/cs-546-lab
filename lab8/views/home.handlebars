@@ -1,13 +1,13 @@
+<h1>{{document_title}}</h1>
 <main class="home">
-    <h1>{{document_title}}</h1>
     <p class="description">
         The webiste designed by Yue Lin is used to search the special character in Marvel, just with html, css and js.
         To connect Marvel Api, I need to create an account and then you will receive two keys.
     </p>
 
     <form action="/search" method="post" class="new-post-form">
-        <label class="form-label" for="marvelCharacter">
-            <input class="character-input" id="marvelCharacter" type="submit" name="searchTerm">
-        </label>
+        <label class="form-label" for="marvelCharacter">searchTerm</label>
+        <input id="marvelCharacter" type="text" name="searchTerm">
+        <input class="character-input" type="submit" >
     </form>
 </main>
