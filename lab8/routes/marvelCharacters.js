@@ -3,45 +3,44 @@ const router = express.Router();
 const characters = require('../data/characters');
 
 router.get('/',async (req,res)=>{
-    res.render('home', { document_title: "Character Found"});
+    res.render('home', { document_title: "Character Finder"});
 });
 
 router.post("/search", async (req, res) => {
     let {searchTerm} = req.body;
     searchTerm = searchTerm.trim();
     if(searchTerm === ""){
-        res.render('home', {
-            errors: 'You need to provide searchTerm',
-            hasErrors: true
+        res.status(400).render('error', {
+            error_message: 'You should provide valid searchTerm',
+            document_title: "Characters Found"
           });
           return;
     }
     const charactersData = await characters.getCharactersBysearchTerm(searchTerm);
-    res.render('index', { characters: charactersData.data.data.results ,searchTerm: searchTerm});
+    res.render('index', { characters: charactersData.data.data.results ,searchTerm: searchTerm,document_title: "Characters Found"});
 });
 
 router.get("/character/:id",async(req, res)=>{
     let characterId = req.params.id;
-    console.log(characterId);
     characterId = characterId.trim();
     if(characterId === ''){
-        res.render('home', {
-            errors: 'You need to provide characterId',
-            hasErrors: true
+        res.render('error', {
+            error_message:  'You need to provide characterId',
+            document_title: "Characters Found"
+          });
+        return;
+    }
+    let singalCharacter = undefined;
+    try{
+        singalCharacter = await characters.getCharacterById(characterId);
+    }catch(e){
+        res.status(404).render('error', {
+            error_message: 'There is no character found for the given ID',
+            document_title: "Characters Found"
           });
           return;
     }
-
-    const singalCharacter = await characters.getCharacterById(characterId);
-    if(singalCharacter === null){
-        res.status(404).render('home', {
-            errors: 'There is no character found for the given ID',
-            hasErrors: true
-          });
-          return;
-    }
-    console.log(singalCharacter.data.data.results[0]);
-    res.render('singalCharacter',{singalCharacter: singalCharacter.data.data.results[0]});
+    res.render('singalCharacter',{singalCharacter: singalCharacter.data.data.results[0],document_title: singalCharacter.data.data.results[0].name});
 });
 
 module.exports = router;

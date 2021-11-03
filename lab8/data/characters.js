@@ -17,7 +17,6 @@ async function getCharactersBysearchTerm(searchTerm){
 async function getCharacterById(characterId){
     const newUrl = baseUrl +"/"+ characterId + '?ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
     const characterData = await axios.get(newUrl);
-    console.log(newUrl);
     return characterData;
 }
 

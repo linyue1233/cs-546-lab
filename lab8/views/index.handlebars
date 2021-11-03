@@ -1,14 +1,14 @@
-<h1>Characters Found</h1>
+<h1>{{document_title}}</h1>
 <h2 class="searchTerm">The searchTerm is:  {{searchTerm}}</h2>
 <main>
     {{#if characters.length}}
-    <ul>
-        {{#each characters}}
+    {{#each characters}}
+    <ul>       
         <li>
             <a href="/character/{{this.id}}">{{this.name}}</a>
         </li>
-        {{/each}}
     </ul>
+    {{/each}}
     {{else}}
         <p class="not-found">We're sorry, but no results were found for {{searchTerm}}.</p>
         <a href="/">Make another search</a>

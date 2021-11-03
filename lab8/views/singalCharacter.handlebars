@@ -1,12 +1,12 @@
-<main class="marvelCharacter">
+<main>
     <div>
         <h1>{{singalCharacter.name}}</h1>
-        <img alt={{singalCharacter.name}} src={{singalCharacter.thumbnail.path}}>
+        <img alt='{{singalCharacter.name}}' src='{{singalCharacter.thumbnail.path}}.{{singalCharacter.thumbnail.extension}}'>
         <p>{{singalCharacter.description}}</p>
-        <h2>Comics</h2>
+        <h2 class="comics">Comics</h2>
         <ul>
             {{#each singalCharacter.comics.items}}
-            <li>
+            <li class="singal-character">
                 {{this.name}}
             </li>
             {{/each}}
