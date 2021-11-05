@@ -1,0 +1,19 @@
+{
+  "name": "cs-546-lab8",
+  "version": "1.0.0",
+  "description": "Yue Lin 10479231 CS-546-lab8",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yue Lin 10479231",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blueimp-md5": "^2.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.7.7"
+  }
+}
