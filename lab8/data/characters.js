@@ -9,6 +9,9 @@ const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters';
 const url = baseUrl + '?ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
 
 async function getCharactersBysearchTerm(searchTerm) {
+    if(Object.keys(arguments).length != 1){
+        throw 'you can not pass more parameters';
+    }
     const newUrl = baseUrl + '?nameStartsWith=' + searchTerm + '&ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
     let charactersData;
     try {
@@ -21,6 +24,9 @@ async function getCharactersBysearchTerm(searchTerm) {
 }
 
 async function getCharacterById(characterId) {
+    if(Object.keys(arguments).length != 1){
+        throw 'you can not pass more parameters';
+    }
     const newUrl = baseUrl + "/" + characterId + '?ts=' + ts + '&apikey=' + publicKey + '&hash=' + hash;
     let characterData;
     try {
@@ -33,6 +39,9 @@ async function getCharacterById(characterId) {
 }
 
 module.exports = {
+    firstName :"Yue",
+    lastName : "Lin",
+    studentId : "10479231",
     getCharactersBysearchTerm,
     getCharacterById
 }

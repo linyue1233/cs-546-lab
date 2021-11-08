@@ -1,0 +1,22 @@
+.footer-info{
+    font-size: medium;
+    font-weight: bold;
+    color: chocolate;
+}
+
+
+h1{
+    font-size: x-large;
+    color: red;
+    font-weight: bolder;
+}
+
+.is-palindrome{
+    color: #0000FF;
+    size:40px;
+}
+
+.not-palindrome{
+    color:#FF0000;
+    size:40px;
+}

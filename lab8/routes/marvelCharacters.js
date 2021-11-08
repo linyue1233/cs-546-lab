@@ -12,7 +12,7 @@ router.post("/search", async (req, res) => {
     if (searchTerm === "") {
         res.status(400).render('error', {
             error_message: 'You should provide valid searchTerm',
-            document_title: "Error Page"
+            document_title: "error"
         });
         return;
     }
@@ -32,13 +32,13 @@ router.post("/search", async (req, res) => {
 
 });
 
-router.get("/character/:id", async (req, res) => {
+router.get("/characters/:id", async (req, res) => {
     let characterId = req.params.id;
     characterId = characterId.trim();
     if (characterId === '') {
         res.status(400).render('error', {
             error_message: 'You need to provide characterId',
-            document_title: "Error Page"
+            document_title: "error"
         });
         return;
     }
@@ -49,7 +49,7 @@ router.get("/character/:id", async (req, res) => {
     } catch (e) {
         res.status(404).render('error', {
             error_message: `There is no character found for the given ID: ${characterId}`,
-            document_title: "Error Page"
+            document_title: "error"
         });
         return;
     }
