@@ -1,16 +1,17 @@
-<h1>{{title}}</h1>
+<main class="main-style">
 
-<ol>
+    <form id="formSubmit" method="post" name="validForm">
+        <label class="label-info" for="palidromeText">Please input the text you want to valid</label>
+        <br/>
+        <textarea name="phrase" id="palidromeText" placeholder="enter the string to check"></textarea>
+        <br/>
+        <input value="Check" type="submit" class="bottomSubmit" name="bottomSubmit">
+    </form>
 
-</ol>
+    <div>
+        <h2 class="palindromeList">Here is the palindrome list</h2>
+        <ol id="attempts">
 
-<form>
-    <textarea name="palindromeValid">
-
-    </textarea>
-</form>
-
-<footer>Name: Yue Lin
-        Student Id: 10479231
-        Skills: Java, C++, JavaScript
-</footer>
+        </ol>
+    </div>
+</main>

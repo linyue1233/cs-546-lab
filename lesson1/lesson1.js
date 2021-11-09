@@ -110,8 +110,21 @@
 // __.isEqual(one, two);
 
 
-let nums = 2.446242342;
-console.log(nums.toFixed(1));
+// let nums = 2.446242342;
+// console.log(nums.toFixed(1));
 
-let n = 1;
-console.log(n.toFixed(1));
+// let n = 1;
+// console.log(n.toFixed(1));
+x = "Hello, 2 the world!";
+var regstr = /[^A-Za-z0-9]/g;
+console.log(x.toLowerCase());
+var str = x.toLowerCase().replace(regstr, '');
+
+console.log(str);
+
+
+var reverse_str = str.split('').reverse().join('');
+
+console.log(reverse_str);
+
+

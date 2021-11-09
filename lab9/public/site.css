@@ -1,22 +1,68 @@
-.footer-info{
-    font-size: medium;
+.footer-info {
+    font-size  : medium;
     font-weight: bold;
-    color: chocolate;
+    color      : chocolate;
 }
 
 
-h1{
-    font-size: x-large;
-    color: red;
+h1 {
+    font-size  : x-large;
+    color      : red;
     font-weight: bolder;
 }
 
-.is-palindrome{
+.is-palindrome {
     color: #0000FF;
-    size:40px;
+    font-size: 40px;
 }
 
-.not-palindrome{
-    color:#FF0000;
-    size:40px;
+.not-palindrome {
+    color: #FF0000;
+    font-size: 40px;
+}
+
+
+.main-style {
+    font-style  : oblique;
+    padding-left: 50px;
+}
+
+ol {
+    font-size: 30px;
+}
+
+.palindromeList {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.label-info {
+    font-size  : x-large;
+    color      : royalblue;
+}
+
+
+textarea {
+    border          : 0;
+    border-radius   : 5px;
+    background-color: rgba(241, 241, 241, .98);
+    width           : 355px;
+    height          : 100px;
+    padding         : 10px;
+    resize          : none;
+    border          : salmon;
+    font-style      : inherit;
+    padding-left    : 20px;
+}
+
+.bottomSubmit {
+    width: 80px;
+    height: 40px;
+    font-weight: bolder;
+    color      : purple;
+}
+
+
+.error-inform {
+    font-size: 200px;
+    color    : red;
 }
