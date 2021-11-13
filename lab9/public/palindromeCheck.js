@@ -1,17 +1,28 @@
-console.log("123123123");
+let emptyError = document.getElementById("emptyError");
+let palidromeText = document.getElementById("palidromeText");
 document.getElementById("formSubmit").addEventListener("submit", event => {
     event.preventDefault();
     let palidData = document.getElementById("palidromeText").value;
-    if (palidData.trim() == "") {
-        document.getElementById("formSubmit").innerHTML += "<p class= error-inform>  the text is an empty string, please input again </p>";
+    if (palidData.trim() === "") {
+        emptyError.hidden = false;
+        document.getElementById("palidromeText").value = "";
+        palidromeText.focus();
         return;
     } else {
         let lowerData = transferLower(palidData);
+        if(lowerData === ""){
+            emptyError.hidden = false;
+            document.getElementById("palidromeText").value = "";
+            palidromeText.focus();
+            return;
+        }
         // judge the string is palindrome
         let reversedData = lowerData.split("").reverse().join("");
         if (lowerData === reversedData) {
+            emptyError.hidden = true;
             document.getElementById("attempts").innerHTML += "<li class = is-palindrome>" + palidData + "</li>";
         } else {
+            emptyError.hidden = true;
             document.getElementById('attempts').innerHTML += "<li class = not-palindrome>" + palidData + "</li>";
         }
 

@@ -8,6 +8,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/public', static);
 app.use('/',routers);
+app.use("*", async(req,res) =>{
+    res.sendStatus(404);
+})
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');

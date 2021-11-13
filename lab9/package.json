@@ -7,7 +7,7 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Yue Lin",
+  "author": "Yue Lin 10479231",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

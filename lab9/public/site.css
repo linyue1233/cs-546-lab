@@ -63,6 +63,11 @@ textarea {
 
 
 .error-inform {
-    font-size: 200px;
+    font-size: 40px;
     color    : red;
+}
+
+p{
+    font-size: 50px;
+    color: coral;
 }
