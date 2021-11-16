@@ -4,6 +4,7 @@
   "description": "CS-546-B Yue Lin 10479231",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yue Lin 10479231",

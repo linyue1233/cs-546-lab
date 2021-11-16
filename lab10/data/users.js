@@ -84,6 +84,7 @@ let exportMethods = {
         if (!username.match(/^[0-9a-zA-z]+$/)) {
             return false;
         }
+        return true;
     },
 
     checkPassword(password) {
@@ -97,6 +98,7 @@ let exportMethods = {
         if (password.length < 6) {
             return false;
         }
+        return true;
     }
 }
 
