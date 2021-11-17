@@ -56,9 +56,18 @@ router.post("/signup", async (req, res) => {
     }
 
     try {
-        await userData.createUser(username, password);
-        req.session.user = username;
-        res.status(200).render("loginForm");
+        let { userInserted } = await userData.createUser(username, password);
+        if (userInserted) {
+            req.session.user = username;
+            res.status(200).render("loginForm");
+        } else {
+            res.status(400).render("signupForm", {
+                layout: 'main',
+                document_title: "User Signup",
+                error_message: "This username exists"
+            });
+            return;
+        }
     } catch (e) {
         res.status(500).render("signupForm", {
             layout: 'main',
@@ -102,8 +111,11 @@ router.post("/login", async (req, res) => {
     try {
         let { authenticated } = await userData.checkUser(username, password);
         if (authenticated === true) {
-            req.session.user = {username:username};
+            req.session.user = { username: username };
             req.session.name = "AuthCookie";
+            // let randomNumber = Math.random().toString();
+            // randomNumber = randomNumber.substring(2, randomNumber.length);
+            // res.cookie('cookieName', randomNumber, { maxAge: 900000, httpOnly: true });
             res.redirect('/private');
         } else {
             res.status(400).render("loginForm", {
@@ -133,8 +145,7 @@ router.get("/private", async (req, res) => {
         });
         return;
     }
-    const {username} = req.session.user;
-    console.log(req.session);
+    const { username } = req.session.user;
     res.render('privateUser', {
         layout: 'main',
         document_title: 'User Page',

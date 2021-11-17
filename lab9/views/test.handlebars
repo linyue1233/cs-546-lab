@@ -1,0 +1,13 @@
+<form id="textSubmit" action="/post" method="post">
+  <textarea name="content" id="editor">
+  </textarea>
+  <p><input type="submit" value="Submit"></p>
+</form>
+
+<script>
+  ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error => {
+      console.error(error);
+    });
+</script>

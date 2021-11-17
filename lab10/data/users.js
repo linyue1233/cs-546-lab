@@ -23,7 +23,7 @@ let exportMethods = {
             let tempUserName = item.username;
             let temp = tempUserName.toLocaleLowerCase();
             if (temp === lowerName) {
-                throw `this username exists`;
+                return {userInserted: false};
             }
         }
 

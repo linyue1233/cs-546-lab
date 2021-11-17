@@ -28,6 +28,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 app.use("/private",async (req,res,next)=>{
+    console.log(req.session);
     if(!req.session.user){
         res.status(403).render('loginForm', {
             layout: 'main',
