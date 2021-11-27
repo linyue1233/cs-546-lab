@@ -115,16 +115,13 @@
 
 // let n = 1;
 // console.log(n.toFixed(1));
-x = "Hello, 2 the world!";
-var regstr = /[^A-Za-z0-9]/g;
-console.log(x.toLowerCase());
-var str = x.toLowerCase().replace(regstr, '');
+// x = "yWEHWUJElin@qq.com";
+// // x = "linyuegy@gmail.com"
+// var regstr = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
+// console.log(x.toLocaleLowerCase());
+// console.log(x);
+// console.log(regstr.test(x));
 
-console.log(str);
-
-
-var reverse_str = str.split('').reverse().join('');
-
-console.log(reverse_str);
-
+// let date = 
+console.log(new Date().toUTCString()); 
 

@@ -1,0 +1,21 @@
+{
+  "name": "cs-546-lab10",
+  "version": "1.0.0",
+  "description": "CS-546-B Yue Lin 10479231",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yue Lin 10479231",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.0.1",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mongodb": "^3.6.12"
+  }
+}

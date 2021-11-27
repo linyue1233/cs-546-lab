@@ -1,7 +1,7 @@
-<form id="textSubmit" action="/post" method="post">
+<form id="textSubmit" action="/test" method="post">
   <textarea name="content" id="editor">
   </textarea>
-  <p><input type="submit" value="Submit"></p>
+  <p><input type="submit" value="Submit" style="display: none;" ></p>
 </form>
 
 <script>
@@ -10,4 +10,6 @@
     .catch(error => {
       console.error(error);
     });
+  document.getElementsByClassName('ck-file-dialog-button')[0].style.display = 'none';
+  console.log(1213)
 </script>

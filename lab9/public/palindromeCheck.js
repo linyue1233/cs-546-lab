@@ -33,17 +33,17 @@ let palidromeText = document.getElementById("palidromeText");
 //     }
 // })
 
-function transferLower(textstr) {
-    // build pattern regex
-    let pattern = /[^A-Za-z0-9]/g;
-    let palidStr = textstr.toLowerCase().replace(pattern, '');
-    return palidStr;
-}
+// function transferLower(textstr) {
+//     // build pattern regex
+//     let pattern = /[^A-Za-z0-9]/g;
+//     let palidStr = textstr.toLowerCase().replace(pattern, '');
+//     return palidStr;
+// }
 
 
-document.getElementById('textSubmit').addEventListener('submit', event => {
-    event.preventDefault();
-    console.log("1231");
-    const editorData = document.getElementById("editor").value;
-    console.log(editorData)
-});
+// document.getElementById('textSubmit').addEventListener('submit', event => {
+//     event.preventDefault();
+//     console.log("1231");
+//     const editorData = document.getElementById("editor").value;
+//     console.log(editorData)
+// });
