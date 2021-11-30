@@ -1,0 +1,16 @@
+{
+  "name": "cs546-lab11",
+  "version": "1.0.0",
+  "description": "CS-546-B-lab11 Yue Lin 10479231",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yue Lin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2"
+  }
+}
