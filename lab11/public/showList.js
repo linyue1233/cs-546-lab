@@ -14,10 +14,10 @@
             let dataLen = res.length;
             let listData = $(res);
             if (dataLen > 0) {
+                errorMessage.hide();
                 showList.show();
                 homeLink.hide();
                 showDetail.hide();
-                errorMessage.hide();
             } else {
                 errorMessage.show();
                 errorMessage.html("There are no results for research");
@@ -25,7 +25,6 @@
                 homeLink.hide();
                 showDetail.hide();
             }
-
             for (let item of listData) {
                 showList.append("<li><a href=" + item._links.self.href + ">" + item.name + "</a></li>");
             }
@@ -39,6 +38,8 @@
             errorMessage.show();
             errorMessage.html("Please input valid value for research");
             searchTerm.empty();
+            homeLink.hide();
+            showList.empty();
             searchTerm.focus();
         } else {
             showList.empty();
@@ -51,7 +52,7 @@
                     let dataLen = res.length;
                     if (dataLen > 0) {
                         showList.show();
-                        homeLink.hide();
+                        homeLink.show();
                         showDetail.hide();
                         errorMessage.hide();
                     } else {
