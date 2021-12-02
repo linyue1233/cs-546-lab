@@ -1,50 +1,42 @@
 const express = require('express');
 const app = express();
-const session = require('express-session');
-const routers = require('./routes/users');
 const static = express.static(__dirname + '/public');
+const routers = require('./routes/search');
 const exphbs = require('express-handlebars');
+
+const handlebarsInstance = exphbs.create({
+    defaultLayout: 'main',
+    helpers: {
+        asJSON: (obj, spacing) => {
+            if (typeof spacing === 'number')
+                return new Handlebars.SafeString(JSON.stringify(obj, null, spacing));
+
+            return new Handlebars.SafeString(JSON.stringify(obj));
+        }
+    },
+
+});
+
+const rewriteUnsupportedBrowserMethods = (req, res, next) => {
+    if (req.body && req.body._method) {
+        req.method = req.body._method;
+        delete req.body._method;
+    }
+    next();
+};
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/public', static);
-
-
-app.use(session({
-    name: 'AuthCookie',
-    secret: 'this yue lin alone moment',
-    resave: false,
-    saveUninitialized: true
-}));
-
-app.use(function (req, res, next) {
-    let currentDate = new Date().toUTCString()
-    let sessionUser = (req.session.user) ? '(Authenticated User)' : '(Non-Authenticated User)';
-    console.log("[" + currentDate + "]" + ": " + req.method + " " + req.originalUrl + " " + sessionUser);
-    next();
-});
-
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-
-app.use("/private", async (req, res, next) => {
-    if (!req.session.user) {
-        res.status(403).render('loginForm', {
-            layout: 'main',
-            document_title: "User Page!",
-            error_message: "You are not logged in"
-        })
-    } else {
-        next();
-    }
-})
+app.use(rewriteUnsupportedBrowserMethods);
 
 app.use('/', routers);
-
-
 app.use("*", async (req, res) => {
-    res.sendStatus(404);
+    res.status(404).json({error: 'This page not found'});
 })
+
+app.engine('handlebars', handlebarsInstance.engine);
+app.set('view engine', 'handlebars');
 
 app.listen(3000, () => {
     console.log("We've now got a server!");
